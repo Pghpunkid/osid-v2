@@ -1,0 +1,91 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Open Source Image Duplicator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+
+		<div class="header">
+			<p class="header">OSID V2</p>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-8">
+				<p>To add images to OSID, Map a network share to the following:</p>
+				<p>Windows:<code>\\<span id="ip0">[ip]</span>\Images</code> or <code>\\OSID\Images</code><br/>Mac/Linux: <code>smb://<span id="ip1">[ip]</span>/Images</code></p>
+				<p>Drag and drop the images you want into that folder.</p>
+			</div>
+			<div class="col-md-4 rightAlign">
+				<p>Disk Statistics</p>
+				<p>
+					<span id="diskUsed">0 B</span> Used<br/>
+					<span id="diskAvail">0 B</span> Available<br/>
+					<span id="diskTotal">0 B</span> Total
+				</p>
+				
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-4 contain">
+				<p class="lead">1. Choose an image:</p>
+				<div id="imageList">No Image(s) Found.</div>
+				<br/>
+				<button id="refreshImages" class="btn btn-default btn-sm">Refresh</button><br/>
+			</div>
+			<div class="col-md-4 contain">
+				<p class="lead">2. Choose your device(s):</p>
+				<div id="targetList">No Device(s) Found.</div>
+				<br/>
+				<button id="refreshDevices" class="btn btn-default btn-sm">Refresh</button><br/>
+			</div>
+			<div class="col-md-4 contain">
+				<p class="lead">3. Start Duplicating</p>
+				<p><button id="startDuplication" class="btn btn-success btn-lg">Duplicate Image</button></p>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-12">
+				<a href="license.txt">
+					<img src="images/gplv3.png" width="150" height="60" border="0" align="right" />
+				</a>
+				<p>Released by <a href="http://www.rockandscissor.com/" target="_blank">Rock &amp; Scissor Enterprises Limited</a> under the <a href="license.txt">GNU GPLv3</a>.<br/>Version 2 Modifications by Patrick Hunter.</p>
+			</div>
+		</div>
+    </div><!-- /.container -->
+	<div class="overlay" style="display:none;">
+		<div class="middle">
+			<div class="panel panel-default">
+			  <div class="panel-body">
+				<p>Duplicating...</p>
+				<br/>
+				<div class="progress progress-striped active">
+				  <div id="progressbar" class="progress-bar" style="width: 0%"></div>
+				</div>
+				<span class="right" id="details">Waiting to start..</span>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min-1.11.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/command.js"></script>
+  
+
+</body></html>
